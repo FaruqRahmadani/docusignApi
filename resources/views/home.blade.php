@@ -22,10 +22,6 @@
         </div>
       </div>
     </div>
-    <!-- Button trigger modal -->
-    <a data-toggle="modal" href="#modalPelamar" class="btn btn-primary btn-sm">Testing Modal</a>
-
-    <!-- Modal -->
     <div class="modal fade" id="modalPelamar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:40px;">
       <div class="modal-dialog">
         <div class="modal-content">
