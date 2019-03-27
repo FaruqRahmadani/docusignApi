@@ -22,4 +22,5 @@ Route::group(['namespace' => 'Auth'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('home', 'HomeController@home')->name('home');
+  Route::get('update/{id}/{state}', 'PelamarController@updateStatus')->name('updateStatus');
 });

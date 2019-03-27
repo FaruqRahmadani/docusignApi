@@ -10,8 +10,10 @@ class Pelamar extends Model
 
   public function getStatusTextAttribute(){
     if ($this->status == 0) return "On Progress";
-    if ($this->status == 1) return "Signed";
-    if ($this->status == 2) return "Rejected";
+    if ($this->status == 1) return "Rejected";
+    if ($this->status == 2) return "Accepted";
+    if ($this->status == 3) return "Waiting for Sign";
+    if ($this->status == 4) return "Signed";
     return "Something Wrong";
   }
   public function getUUIDAttribute(){

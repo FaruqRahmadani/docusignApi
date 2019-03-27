@@ -22,15 +22,19 @@ class PelamarController extends Controller
         return $query->StatusText;
       })
       ->addColumn('aksi', function($query){
-        return
+        if ($query->status == 0) {
+          return
           '
-          <button type="button" class="btn btn-default" name="button">
-            <i class="text-success glyphicon glyphicon-ok-circle"></i>
-          </button>
-          <button type="button" class="btn btn-default" name="button">
-            <i class="text-danger glyphicon glyphicon-remove-circle"></i>
-          </button>
+          <a href="'.route('updateStatus', [$query->UUID, encrypt(3)]).'" type="button" class="btn btn-default" name="button">
+          <i class="text-success glyphicon glyphicon-ok-circle"></i>
+          </a>
+          <a href="'.route('updateStatus', [$query->UUID, encrypt(1)]).'" type="button" class="btn btn-default" name="button">
+          <i class="text-danger glyphicon glyphicon-remove-circle"></i>
+          </a>
           ';
+        }else {
+          return '-';
+        }
       })
       ->rawColumns(['nama','file_pdf', 'aksi'])
       ->make();

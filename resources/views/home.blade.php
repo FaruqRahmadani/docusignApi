@@ -32,13 +32,13 @@
           <div class="modal-body">
             <dl class="row">
               <dt class="col-sm-4">Nama</dt>
-              <dd class="col-sm-8"> <strong id="nama">Lorem ipsum dolor sit amet</strong> </dd>
+              <dd class="col-sm-8"> <strong id="nama"></strong> </dd>
               <dt class="col-sm-4">Jenis Kelamin</dt>
-              <dd class="col-sm-8" id="jenis_kelamin"> Pria </dd>
+              <dd class="col-sm-8" id="jenis_kelamin"></dd>
               <dt class="col-sm-4">Email</dt>
-              <dd class="col-sm-8" id="email"> mail@mail.id </dd>
+              <dd class="col-sm-8" id="email"></dd>
               <dt class="col-sm-4">Nomor Telepon</dt>
-              <dd class="col-sm-8" id="no_telepon"> +63 9999 9999 </dd>
+              <dd class="col-sm-8" id="no_telepon"></dd>
             </dl>
           </div>
           <div class="modal-footer">

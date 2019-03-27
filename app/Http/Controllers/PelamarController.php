@@ -21,4 +21,12 @@ class PelamarController extends Controller
     Pelamar::create($data);
     return redirect()->back()->withInput()->with(['errors' => $validator->errors()]);
   }
+
+  public function updateStatus($id, $state){
+    $id = decrypt($id);
+    $state = decrypt($state);
+    $pelamar = Pelamar::findOrFail($id);
+    $pelamar->update(['status' => $state]);
+    return redirect()->back();
+  }
 }
