@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('', 'HomeController@index');
 
-Auth::routes();
+Route::group(['namespace' => 'Auth'], function () {
+  Route::get('login', 'LoginController@showLoginForm');
+  Route::post('login', 'LoginController@login')->name('login');
+  Route::get('logout', 'LoginController@logout')->name('logout');
+});
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('home', 'HomeController@home')->name('home');
+});

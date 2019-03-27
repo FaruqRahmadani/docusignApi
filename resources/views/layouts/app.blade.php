@@ -19,10 +19,19 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">DocusignAPI</a>
+          <ul class="nav navbar-nav navbar-left">
+            @auth              
+              <li><a href="{!! route('home') !!}">Home</a></li>
+            @endauth
+          </ul>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login / Logout</a></li>
+            @guest
+              <li><a href="{!! route('login') !!}">Login</a></li>
+            @else
+              <li><a href="{!! route('logout') !!}">Logout</a></li>
+            @endguest
           </ul>
         </div>
       </div>
