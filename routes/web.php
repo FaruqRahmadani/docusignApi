@@ -12,6 +12,7 @@
 */
 
 Route::get('', 'HomeController@index');
+Route::post('', 'PelamarController@store')->name('pelamarStore');
 
 Route::group(['namespace' => 'Auth'], function () {
   Route::get('login', 'LoginController@showLoginForm');
