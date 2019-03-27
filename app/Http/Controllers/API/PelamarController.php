@@ -13,7 +13,7 @@ class PelamarController extends Controller
     $query = Pelamar::query()->orderBy('created_at', 'desc');
     return Datatables::of($query)
       ->editColumn('file_pdf', function($query){
-        return '<i class="glyphicon glyphicon-duplicate"></i>';
+        return '<a href="'.$query->file_pdf.'" target="_blank" class="glyphicon glyphicon-duplicate"></a>';
       })
       ->editColumn('status', function($query){
         return $query->StatusText;
