@@ -11,6 +11,7 @@ window.Vue = require('vue');
 require('datatables/media/js/jquery.dataTables');
 require('datatables.net-bs');
 require('./custom/dataTables');
+require('./custom/modalPelamar');
 
 /**
  * The following block of code may be used to automatically register your

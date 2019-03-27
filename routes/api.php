@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'pelamar', 'as' => 'pelamar', 'namespace' => 'API'], function() {
   Route::get('datatable', 'PelamarController@datatable')->name('Datatable');
+  Route::patch('{id}', 'PelamarController@info')->name('Info');
 });

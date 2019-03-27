@@ -14,4 +14,7 @@ class Pelamar extends Model
     if ($this->status == 2) return "Rejected";
     return "Something Wrong";
   }
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }

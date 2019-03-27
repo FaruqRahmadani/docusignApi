@@ -77912,6 +77912,8 @@ __webpack_require__(/*! datatables/media/js/jquery.dataTables */ "./node_modules
 __webpack_require__(/*! datatables.net-bs */ "./node_modules/datatables.net-bs/js/dataTables.bootstrap.js");
 
 __webpack_require__(/*! ./custom/dataTables */ "./resources/js/custom/dataTables.js");
+
+__webpack_require__(/*! ./custom/modalPelamar */ "./resources/js/custom/modalPelamar.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -78109,6 +78111,27 @@ $(document).ready(function () {
       name: "aksi"
     }],
     responsive: true
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/custom/modalPelamar.js":
+/*!*********************************************!*\
+  !*** ./resources/js/custom/modalPelamar.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).on("click", ".modalPelamar", function () {
+  axios({
+    method: "patch",
+    url: $(this).attr('data-url')
+  }).then(function (response) {
+    $("#nama").text(response.data.nama);
+    $("#jenis_kelamin").text(response.data.jenis_kelamin == 1 ? 'Laki - Laki' : 'Perempuan');
+    $("#email").text(response.data.email);
+    $("#no_telepon").text(response.data.no_telepon);
   });
 });
 
