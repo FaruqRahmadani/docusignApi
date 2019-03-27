@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Tabel Pendaftar</div>
+          <div class="panel-heading">Tabel Pelamar</div>
           <div class="panel-body">
-            <table class="table datatable" style="width:100%;">
+            <table class="table" id="datatablePelamar" data="{!! route('pelamarDatatable') !!}" style="width:100%;">
               <thead>
                 <tr>
                   <th>Nama</th>
@@ -17,7 +17,11 @@
                 </tr>
               </thead>
               <tbody>
-                @for ($i = 1; $i < 15; $i++)
+                <td data-for="nama"></td>
+                <td data-for="file_pdf"></td>
+                <td data-for="status"></td>
+                <td data-for="aksi"></td>
+                {{-- @for ($i = 1; $i < 15; $i++)
                   <tr>
                     <td>abah sudrun</td>
                     <td> <i class="glyphicon glyphicon-duplicate"></i> </td>
@@ -31,7 +35,7 @@
                       </button>
                     </td>
                   </tr>
-                @endfor
+                @endfor --}}
               </tbody>
             </table>
           </div>
