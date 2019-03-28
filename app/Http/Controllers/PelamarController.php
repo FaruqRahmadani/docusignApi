@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
+use App\Mail\PelamarProses;
 use App\Pelamar;
+use Validator;
+use Mail;
 
 class PelamarController extends Controller
 {
@@ -27,6 +29,11 @@ class PelamarController extends Controller
     $state = decrypt($state);
     $pelamar = Pelamar::findOrFail($id);
     $pelamar->update(['status' => $state]);
+    $this->sendMailPelamar($pelamar, $state);
     return redirect()->back();
+  }
+
+  private function sendMailPelamar($pelamar, $status){
+    return Mail::to($pelamar->email)->send(new PelamarProses($pelamar, $status));
   }
 }
